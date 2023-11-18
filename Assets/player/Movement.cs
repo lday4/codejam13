@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
         // If sliding should jump left or right
         if (slideLeft || slideRight) {
             currentJumps = totalJumps;
-            rb.AddForce(new Vector2((slideRight ? -1 : 1) * jumpForce, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2((slideRight ? -1 : 1) * jumpForce * 0.75f, jumpForce), ForceMode2D.Impulse);
             wallJumpedTimer = 0.25f;
         }
         // If grounded should jump
